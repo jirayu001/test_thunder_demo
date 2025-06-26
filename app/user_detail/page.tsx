@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
 import { useAppRouter } from "../router";
+import { useSearchParams } from "next/navigation";
 
 export default function UserDetail() {
   const router = useAppRouter();
+  const searchParams = useSearchParams();
+  const userId = searchParams.get("userId") || "MeowUser";
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#f6e7c1] px-2 py-8">
@@ -23,7 +26,7 @@ export default function UserDetail() {
           </div>
           <div className="flex items-center gap-3">
             <span className="font-semibold text-gray-600 w-28">ชื่อผู้ใช้:</span>
-            <span className="text-gray-800">MeowUser</span>
+            <span className="text-gray-800">{userId}</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="font-semibold text-gray-600 w-28">สถานะ:</span>
@@ -33,7 +36,7 @@ export default function UserDetail() {
         <div className="flex gap-4 w-full mt-8">
           <button
             className="w-1/2 py-3 rounded-full text-orange-500 text-lg font-semibold border border-orange-400 hover:bg-orange-50 transition"
-            onClick={() => router.push("/user_detail/edit_user_detail")}
+            onClick={() => router.goToEditUserDetail()}
           >
             Edit
           </button>

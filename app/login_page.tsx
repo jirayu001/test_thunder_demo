@@ -15,7 +15,8 @@ export default function LoginPage() {
     //   return;
     // }
     // setError("");
-    router.push("/user_detail"); // Navigate to user_detail page after login
+    // Example: use the username as the userId param
+    router.goToUserDetailWithParams(username || "guest");
   };
 
   return (
