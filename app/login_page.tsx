@@ -10,13 +10,30 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // if (!username || !password) {
-    //   setError("กรุณากรอกอีเมลและรหัสผ่าน");
-    //   return;
-    // }
-    // setError("");
-    // Example: use the username as the userId param
-    router.goToUserDetailWithParams(username || "guest");
+    if (!username || !password) {
+      setError("กรุณากรอกอีเมลและรหัสผ่าน");
+      return;
+    }
+    // Check registration data from localStorage
+    if (typeof window !== "undefined") {
+      const regisUserListStr = localStorage.getItem("regis_user_list");
+      console.log("regis_user_list from localStorage:", regisUserListStr); // Log the registration data
+      if (regisUserListStr) {
+        const regisUserList = JSON.parse(regisUserListStr);
+        const foundUser = regisUserList.find((u: any) => u.email === username && u.password === password);
+        if (!foundUser) {
+          setError("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+          return;
+        }
+        // Save login username to localStorage
+        localStorage.setItem("login_user", foundUser.username);
+      } else {
+        setError("ไม่พบข้อมูลผู้ใช้");
+        return;
+      }
+    }
+    setError("");
+    router.push("/animal_list"); // Go to thedog page after login
   };
 
   return (
@@ -91,8 +108,9 @@ export default function LoginPage() {
           <button
             type="button"
             className="w-full py-3 rounded-full text-orange-500 text-lg font-semibold border border-orange-400 hover:bg-orange-50 transition"
+            onClick={() => router.push("/regis_page")}
           >
-            Register
+            สมัครสมาชิก
           </button>
         </form>
       </div>

@@ -22,7 +22,7 @@ export default function UserDetail() {
         <div className="w-full flex flex-col gap-4 mt-6">
           <div className="flex items-center gap-3">
             <span className="font-semibold text-gray-600 w-28">อีเมล:</span>
-            <span className="text-gray-800">user@email.com</span>
+            <span className="text-gray-800">{userId}</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="font-semibold text-gray-600 w-28">ชื่อผู้ใช้:</span>
