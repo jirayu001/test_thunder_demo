@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
 import { useState } from "react";
-import { useAppRouter } from "./router";
+import { useAppRouter } from "../router";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");

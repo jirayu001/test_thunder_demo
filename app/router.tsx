@@ -6,7 +6,7 @@ export function useAppRouter() {
 
   return {
     goToHome: () => router.push("/"),
-    goToLogin: () => router.push("/login"),
+    goToLogin: () => router.push("/login_page"),
     goToSignup: () => router.push("/signup"),
     goToUserDetail: () => router.push("/user_detail"),
     goToEditUserDetail: () => router.push("/user_detail/edit_user_detail"),

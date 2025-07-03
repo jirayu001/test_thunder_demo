@@ -1,11 +1,23 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-import LoginPage from "./login_page";
+
+import { useState, useEffect } from "react";
+import { useAppRouter } from "./router";
 
 export default function Home() {
-  // const [showPopup, setShowPopup] = useState(false);
-  return (
-    <LoginPage />
-  );
+  const appRouter = useAppRouter();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const loginUser = localStorage.getItem("login_user");
+      if (loginUser) {
+        // window.location.href = "/animal_list";
+        appRouter.goToAnimalList();
+      } 
+      else {
+        appRouter.goToLogin();
+      }
+    }
+  }, []);
+
+  // return <LoginPage />;
 }
