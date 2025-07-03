@@ -46,7 +46,7 @@ export default function LoginPage() {
                 if (username === "admin" && password === "1234") {
                 localStorage.setItem("isLoggedIn", "true");
                 localStorage.setItem("username", username);
-                window.location.replace("/");
+                window.location.href = "/";
                 } else {
                 window.alert("Username หรือ Password ไม่ถูกต้อง");
                 }
