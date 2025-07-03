@@ -1,6 +1,5 @@
 // rafce
 import Link from "next/link";
-import Image from "next/image";
 
 // rfce
 const page = async () => {
