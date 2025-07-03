@@ -36,10 +36,10 @@ const page = async () => {
         <h1 style={{ fontSize: 48, fontWeight: 700, lineHeight: 1.1, marginBottom: 24, color: "#fff" }}>
           Hello <br />
           Welcome<br />
-          Have room
+          {/* Have room */}
         </h1>
         <p style={{ color: "#f3f3f3", marginBottom: 32 }}>
-          good take care do everything.
+          {/* good take care do everything. */}
         </p>
         <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 24 }}>
           <button style={{ background: "#0070f3", border: "2px solid #0070f3", padding: "12px 32px", borderRadius: 6, fontWeight: 600, cursor: "pointer", color: "#fff" }}>
@@ -55,7 +55,7 @@ const page = async () => {
         </div>
       </div>
       <div style={{ flex: 1, position: "relative", display: "flex", justifyContent: "center", alignItems: "center", zIndex: 1, paddingRight: 16 }}>
-        <Image
+        {/* <Image
           src="https://scontent.fbkk29-6.fna.fbcdn.net/v/t39.30808-6/480761406_944502484528307_7655619368274866271_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=PdBpWXsYiuAQ7kNvwHdawrC&_nc_oc=AdkfUuweA5QMjO2iQt-qmr7xGE0Qu1zZmNrSsH9QABF0j-Y4-7C5aG61B1cE2mEW_GcfZBjRqOl0IjMhFhRYre9S&_nc_zt=23&_nc_ht=scontent.fbkk29-6.fna&_nc_gid=AKRcjU762GYIpn-fTZWbmQ&oh=00_AfNwplVnGM4f6qfOv4aP0SzcKLBv2VhTxYVtqh3eK8hMKQ&oe=686986AB"
           alt="Person"
           width={400}
@@ -67,7 +67,7 @@ const page = async () => {
             zIndex: 2,
             boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
           }}
-        />
+        /> */}
       </div>
     </div>
   );
